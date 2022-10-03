@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Юредические услуги и консультации</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">	
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> 
+	<link href="css/nikstyle.css" type="text/css" rel="stylesheet" media="screen,projection"/> 
+	<link href="css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/> 
+</head>
+<body class="main">
+  <div id="enter" class="modal">
+	<a href="#!" class="modal-close"></a>
+	<div class="modal-content">
+	  <h4>Войти</h4>  
+      <form>
+		<input type="text" placeholder="Вашe имя"/>
+		<input type="password"  />
+		<div class="row"><label><input type="checkbox" />Запомнить меня</label><a href="#" >Забыли пароль?</a></div>
+		<input type="submit" value="ВОЙТИ" />
+	  </form>
+	  <p>Или используйте соц. сети для входа</p>
+	 </div>
+ </div>
+<div id="zakaz" class="modal">
+	<a href="#!" class="modal-close "></a>
+    <div class="modal-content">
+      <h4>ЕСЛИ ВЫ ОФОРМИТЕ ЗАКАЗ НА СУММУ БОЛЕЕ</h4>
+	  <div class="pre">25 990 р</div>
+	  <h3>в течении</h3>
+	  <div class="timing">
+		<p>25<span>мин</span></p>
+		<p>:</p>
+		<p>30<span>сек</span></p>
+	  </div>
+	  <h6>то вы получите дополнительную <strong>скидку</strong></h6>
+	  <div class="pre-price">30%</div>
+	 <button>ПРИМЕНИТЬ СКИДКУ </button>
+    </div> 
+</div>
+
+<!-- HEAD -->
+<header>
+	<div class="top-head">
+		<div class="wrapper">
+			<div class="logo">
+				<a href="#"><img src="img/logo.png" /></a>
+			</div>
+			<div class="settings">
+				<div class="consult">
+					<img src="img/phone.png" alt="">
+					<div class="span">Юридическая консультация</div>
+				</div>
+
+				<div class="place">
+					<div class="tools">
+					
+					<!--<a href="#enter"class="enter modal-trigger">Личный кабинет</a>-->
+					<div class="region">
+						<p>Москва</p>
+						<ul>	
+							<li><img src="img/sochi.png" />Краснодарский край
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+							<li><img src="img/sankt.png" />Центральный район
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+							<li><img src="img/ivanovo.png" />Алтайский край
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+							<li><img src="img/murmansk.png" />Красноярский край
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+							<li><img src="img/krasnodor.png" />Приморский край
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				</div>
+				<a href="#zakaz" class="karta modal-trigger tooltipped"  data-position="bottom" data-tooltip="Можно получить клубную скидку, для этого необходимо приобрести Клубную карту">
+					<img src="images/karta.png" alt="">
+					<span>клубная карта</span>
+					
+				</a>
+				<div class="phone">
+					<a href="tel:88005001573">8 (800) 500-15-73</a>
+					<p>Звонок бесплатный</p>
+				</div>
+				
+				
+				<div class="account">
+					
+					
+				
+					<a href="#" class="favorit">
+						<img src="images/heart (1).svg" alt="">
+						<span>2</span></a>
+					<div class="basket">
+						<a class='dropdown-trigger icon' href='#' data-target='dropdown'>
+							<img src="images/bucket (1).svg" alt="">
+							<span class="icon-num">2</span>
+						</a>
+						<div class="dropdown">
+						<ul>
+							<li><span>Лицензирование аптеки</span><span>3 500 р</span></li>
+							<li><span>Лицензирование аптеки</span><span>3 500 р</span></li>
+						</ul>
+						<div class="totalprice">
+							<span>ИТОГО:</span>
+							<span>8 000 р</span>
+						</div>
+						<a href="btn">оформить заказ</a>
+					</div>
+					</div>
+					
+					<a href="#" class="dropdown-trigger users" data-target='user-menu'><img src="img/defuser.jpg" /></a>
+					<ul id='user-menu' class='dropdown-content'>
+						<div class="my">Alexsys <a href="#">Выйти</a></div>
+						<li><a href="#!" class="icon trash">Корзина</a></li>
+						<li><a href="#!" class="icon story">История заказов</a></li>
+						<li><a href="#!" class="icon myfavor">Избранное</a></li>
+						<li><a href="#!" class="icon setting">Редактировать профиль</a></li>
+						<a href="#" class="policy">Пользовательское соглашение</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+			<div class="menu-line"><div class="wrapper">
+				<ul class="menu_top">
+					<li class="active">	<a href="#">Главная </a></li>
+					<li>
+						<a href="#">Юр. лицам</a>
+						<ul>
+							<li><a href="#">Физ лицам</a></li>
+							<li><a href="#">Прайс-лист</a></li>
+							<li><a href="#">Услуги online</a></li>
+							<li><a href="#">Регионы</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Физ лицам</a>
+						<ul class="megamenu">
+							<div class="col">
+								<li><a href="#">Физ лицам</a></li>
+								<li><a href="#">Прайс-лист</a></li>
+								<li><a href="#">Услуги online</a></li>
+								<li><a href="#">Регионы</a></li>
+								<li><a href="#">Контакты</a></li>
+							</div>
+							<div class="col">
+								<li><a href="#">Физ лицам</a></li>
+								<li><a href="#">Прайс-лист</a></li>
+								<li><a href="#">Услуги online</a></li>
+								<li><a href="#">Регионы</a></li>
+								<li><a href="#">Контакты</a></li>
+							</div>
+							<div class="col">
+								<li><a href="#">Физ лицам</a></li>
+								<li><a href="#">Прайс-лист</a></li>
+								<li><a href="#">Услуги online</a></li>
+								<li><a href="#">Регионы</a></li>
+								<li><a href="#">Контакты</a></li>
+							</div>
+						</ul>
+					</li>
+					<li><a href="#">Прайс-лист</a></li>
+					<li><a href="#">Услуги online</a></li>
+					<li><a href="#">Регионы</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+				</div>	
+			</div>						
+	</div>
+</header>
+
+<!--Content -->
+<div class="content">
+
+	<div class="wrapper wrapper_left-bg mini-col">
+			<div class="left-col">
+				
+			</div>
+			<div class="center-col ">
+				
+				<div class="nik-ver ">
+					<div class="nik-ver__block">
+						<div class="nik-ver__title big-title">Верефикация</div>
+						<div class="nik-ver__subtitle">Для работы вашего аккаунта, неободимо пройти верефикацию. Отправте все необходимые документы и добавти всю требуемую информацию о себе.</div>
+						<div class="nik-ver__body">
+							<div class="nik-ver__row">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Организационная правовая форма" class="nik-inp">
+							</div>
+							<div class="nik-ver__row flex">
+								<input autocomplete="off" type="text" name="form[]"placeholder="ИНН" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="ОКПО" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="ОГРН" class="nik-inp">
+							</div>
+							<div class="nik-ver__row flex">
+								<input autocomplete="off" type="text" name="form[]"placeholder="ОКНХ" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Телефон" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Электронная почта" class="nik-inp">
+							</div>
+							<div class="nik-ver__row flex">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Индекс" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Регион" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Город" class="nik-inp">
+							</div>
+	<div class="nik-ver__row">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Адрес" class="nik-inp">
+							</div>
+							
+
+
+						</div>
+					</div>
+					<div class="nik-ver__block">
+						<div class="nik-ver__title">Реквизиты</div>
+						<div class="nik-ver__body">
+							
+							<div class="nik-ver__row flex">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Субъект федерации" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Федеральный округ" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="ФИО руководителя" class="nik-inp">
+							</div>
+							<div class="nik-ver__row flex">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Телефон руководителся" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Номер счета" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Наименования банка" class="nik-inp">
+							</div>
+							<div class="nik-ver__row flex">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Бик банка" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="Корресподеский счет" class="nik-inp">
+								<input autocomplete="off" type="text" name="form[]"placeholder="НДС" class="nik-inp">
+							</div>
+						
+
+						</div>
+					</div>
+					<div class="nik-ver__block">
+						<div class="nik-ver__title">Потверждающие документы</div>
+						<div class="nik-ver__body">
+							
+							<div class="upload-file">
+						<div class="upload-file__column">
+							<div class="upload-file__item _active">
+								<div class="wrapper-file">
+									<button class="_icon-del-ic ">
+										<svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.88889 4.11111V2.55556C4.88889 1.69645 5.58533 1 6.44444 1H9.55556C10.4147 1 11.1111 1.69645 11.1111 2.55556V4.11111M1 4.11111H15H1ZM2.55556 4.11111V15C2.55556 15.8591 3.252 16.5556 4.11111 16.5556H11.8889C12.748 16.5556 13.4444 15.8591 13.4444 15V4.11111H2.55556Z" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.55554 8V12.6667" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.44446 8V12.6667" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+									</button>
+
+									<div class="upload__image-ibg"><img src="data:image/jpeg;base64,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" alt=""></div>
+
+
+
+
+									<input autocomplete="off" id="ttt" type="file" name="form[]" data-error="Ошибка" placeholder="" class="">
+									<div class="wrap2">
+										<label for="ttt">Перетащите сюда файл</label>
+									</div>
+								</div>
+
+								<span>Сертификат</span>
+							</div>
+						</div>
+						<div class="upload-file__column">
+							<div class="upload-file__item ">
+								<div class="wrapper-file">
+									<button class="_icon-del-ic ">
+										<svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.88889 4.11111V2.55556C4.88889 1.69645 5.58533 1 6.44444 1H9.55556C10.4147 1 11.1111 1.69645 11.1111 2.55556V4.11111M1 4.11111H15H1ZM2.55556 4.11111V15C2.55556 15.8591 3.252 16.5556 4.11111 16.5556H11.8889C12.748 16.5556 13.4444 15.8591 13.4444 15V4.11111H2.55556Z" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.55554 8V12.6667" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.44446 8V12.6667" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+									</button>
+
+									<input autocomplete="off" id="ttt" type="file" name="form[]" data-error="Ошибка" placeholder="" class="">
+									<div class="wrap2">
+										<label for="ttt">Перетащите сюда файл</label>
+									</div>
+								</div>
+
+								<span>Лицензия</span>
+							</div>
+						</div>
+						<div class="upload-file__column">
+							<div class="upload-file__item ">
+								<div class="wrapper-file">
+									<button class="_icon-del-ic "><svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.88889 4.11111V2.55556C4.88889 1.69645 5.58533 1 6.44444 1H9.55556C10.4147 1 11.1111 1.69645 11.1111 2.55556V4.11111M1 4.11111H15H1ZM2.55556 4.11111V15C2.55556 15.8591 3.252 16.5556 4.11111 16.5556H11.8889C12.748 16.5556 13.4444 15.8591 13.4444 15V4.11111H2.55556Z" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.55554 8V12.6667" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.44446 8V12.6667" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+
+									<input autocomplete="off" id="ttt" type="file" name="form[]" data-error="Ошибка" placeholder="" class="">
+									<div class="wrap2">
+										<label for="ttt">Перетащите сюда файл</label>
+									</div>
+								</div>
+
+								<span>Прочий документ</span>
+							</div>
+						</div>
+						<div class="upload-file__column">
+							<div class="upload-file__item ">
+								<div class="wrapper-file">
+									<button class="_icon-del-ic "><svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.88889 4.11111V2.55556C4.88889 1.69645 5.58533 1 6.44444 1H9.55556C10.4147 1 11.1111 1.69645 11.1111 2.55556V4.11111M1 4.11111H15H1ZM2.55556 4.11111V15C2.55556 15.8591 3.252 16.5556 4.11111 16.5556H11.8889C12.748 16.5556 13.4444 15.8591 13.4444 15V4.11111H2.55556Z" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.55554 8V12.6667" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.44446 8V12.6667" stroke="black" stroke-opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+
+									<input autocomplete="off" id="ttt" type="file" name="form[]" data-error="Ошибка" placeholder="" class="">
+									<div class="wrap2">
+										<label for="ttt">Перетащите сюда файл</label>
+									</div>
+								</div>
+
+								<span>Прочий документ</span>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+					
+						</div>
+					</div>
+					<div class="nik-ver__btns">
+						<div  class="nik-btn " >СОХРАНИТЬ</div>
+						<div  class="nik-btn grey-btn " >ЗАПОЛНИТЬ ПОЗЖЕ</div>
+					</div>
+				</div>
+			</div>
+			<div class="right-col"></div>
+	</div>
+</div>
+
+
+
+
+</div>
+
+<!-- FOTTER  -->
+
+<footer>
+	<div class="wrapper">
+		<div class="copy"><span>@ Все права защищены.<br/>2018 Файберам-маркет.</span></div>
+		<div class="phone">			
+			<div class="social">
+				<a href="#" class="tel"></a>
+				<a href="#" class="viber"></a>
+				<a href="#" class="wtf"></a>
+			</div>
+			<a href="#call" class="white icon-phone modal-trigger">8(800) 500-91-08</a>
+		</div>
+		<div class="bottom_menu">
+			<ul class="footer_menu">
+				<li><a href="#">Офферта</a></li>
+				<li><a href="#">Регистрация</a></li>
+				<li><a href="#">Карта сайта</a></li>
+				<li><a href="#">Политика конфидициальности</a></li>
+				<li><a href="#">Написать руководителю</a></li>
+			</ul>
+		</div>
+		<div class="social">
+			<a href="" class="vk"  target="_blank"></a>
+			<a href="" class="fb"  target="_blank"></a>
+			<a href="" class="you" target="_blank"></a>
+			<a href="" class="ins" target="_blank"></a>
+		</div>
+	</div>
+</footer>
+
+<!-- Body END  -->	
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>

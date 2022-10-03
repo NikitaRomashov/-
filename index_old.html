@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Юредические услуги и консультации</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">	
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> 
+	<link href="css/add.css" type="text/css" rel="stylesheet" media="screen,projection"/> 
+	<link href="css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/> 
+	<link href="css/jquery-ui-1.9.1.custom.css" type="text/css" rel="stylesheet" media="screen,projection"/> 
+<link href="css/nikstyle.css" type="text/css" rel="stylesheet" media="screen,projection"/> 
+	
+</head>
+<body class="main">
+  <div id="enter" class="modal">
+	<a href="#!" class="modal-close"></a>
+	<div class="modal-content">
+	  <h4>Войти</h4>  
+      <form>
+		<input type="text" placeholder="Вашe имя"/>
+		<input type="password"  />
+		<div class="row"><label><input type="checkbox" />Запомнить меня</label><a href="#" >Забыли пароль?</a></div>
+		<input type="submit" value="ВОЙТИ" />
+	  </form>
+	  <p>Или используйте соц. сети для входа</p>
+	 </div>
+ </div>
+<div id="zakaz" class="modal">
+	<a href="#!" class="modal-close "></a>
+    <div class="modal-content">
+      <h4>ЕСЛИ ВЫ ОФОРМИТЕ ЗАКАЗ НА СУММУ БОЛЕЕ</h4>
+	  <div class="pre">25 990 р</div>
+	  <h3>в течении</h3>
+	  <div class="timing">
+		<p>25<span>мин</span></p>
+		<p>:</p>
+		<p>30<span>сек</span></p>
+	  </div>
+	  <h6>то вы получите дополнительную <strong>скидку</strong></h6>
+	  <div class="pre-price">30%</div>
+	 <button>ПРИМЕНИТЬ СКИДКУ </button>
+    </div> 
+</div>
+
+<!-- HEAD -->
+<header>
+	<div class="top-head">
+		<div class="wrapper">
+			<div class="logo">
+				<a href="#"><img src="img/logo.png" /></a>
+			</div>
+			<div class="settings">
+				<div class="consult">
+					<img src="img/phone.png" alt="">
+					<div class="span">Юридическая консультация</div>
+				</div>
+
+				<div class="place">
+					<div class="tools">
+					
+					<!--<a href="#enter"class="enter modal-trigger">Личный кабинет</a>-->
+					<div class="region">
+						<p>Москва</p>
+						<ul>	
+							<li><img src="img/sochi.png" />Краснодарский край
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+							<li><img src="img/sankt.png" />Центральный район
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+							<li><img src="img/ivanovo.png" />Алтайский край
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+							<li><img src="img/murmansk.png" />Красноярский край
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+							<li><img src="img/krasnodor.png" />Приморский край
+								<ul>	
+									<li><a href="#">Краснодар</a></li>
+									<li><a href="#">Сочи</a></li>
+									<li><a href="#">Адлер</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				</div>
+				<a href="#zakaz" class="karta modal-trigger tooltipped"  data-position="bottom" data-tooltip="Можно получить клубную скидку, для этого необходимо приобрести Клубную карту">
+					<img src="images/karta.png" alt="">
+					<span>клубная карта</span>
+					
+				</a>
+				<div class="phone">
+					<a href="tel:88005001573">8 (800) 500-15-73</a>
+					<p>Звонок бесплатный</p>
+				</div>
+				
+				
+				<div class="account">
+					
+					
+				
+					<a href="#" class="favorit">
+						<img src="images/heart (1).svg" alt="">
+						<span>2</span></a>
+					<div class="basket">
+						<a class='dropdown-trigger icon' href='#' data-target='dropdown'>
+							<img src="images/bucket (1).svg" alt="">
+							<span class="icon-num">2</span>
+						</a>
+						<div class="dropdown">
+						<ul>
+							<li><span>Лицензирование аптеки</span><span>3 500 р</span></li>
+							<li><span>Лицензирование аптеки</span><span>3 500 р</span></li>
+						</ul>
+						<div class="totalprice">
+							<span>ИТОГО:</span>
+							<span>8 000 р</span>
+						</div>
+						<a href="btn">оформить заказ</a>
+					</div>
+					</div>
+					
+					<a href="#" class="dropdown-trigger users" data-target='user-menu'><img src="img/defuser.jpg" /></a>
+					<ul id='user-menu' class='dropdown-content'>
+						<div class="my">Alexsys <a href="#">Выйти</a></div>
+						<li><a href="#!" class="icon trash">Корзина</a></li>
+						<li><a href="#!" class="icon story">История заказов</a></li>
+						<li><a href="#!" class="icon myfavor">Избранное</a></li>
+						<li><a href="#!" class="icon setting">Редактировать профиль</a></li>
+						<a href="#" class="policy">Пользовательское соглашение</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+			<div class="menu-line"><div class="wrapper">
+				<ul class="menu_top">
+					<li class="active">	<a href="#">Главная </a></li>
+					<li>
+						<a href="#">Юр. лицам</a>
+						<ul>
+							<li><a href="#">Физ лицам</a></li>
+							<li><a href="#">Прайс-лист</a></li>
+							<li><a href="#">Услуги online</a></li>
+							<li><a href="#">Регионы</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Физ лицам</a>
+						<ul class="megamenu">
+							<div class="col">
+								<li><a href="#">Физ лицам</a></li>
+								<li><a href="#">Прайс-лист</a></li>
+								<li><a href="#">Услуги online</a></li>
+								<li><a href="#">Регионы</a></li>
+								<li><a href="#">Контакты</a></li>
+							</div>
+							<div class="col">
+								<li><a href="#">Физ лицам</a></li>
+								<li><a href="#">Прайс-лист</a></li>
+								<li><a href="#">Услуги online</a></li>
+								<li><a href="#">Регионы</a></li>
+								<li><a href="#">Контакты</a></li>
+							</div>
+							<div class="col">
+								<li><a href="#">Физ лицам</a></li>
+								<li><a href="#">Прайс-лист</a></li>
+								<li><a href="#">Услуги online</a></li>
+								<li><a href="#">Регионы</a></li>
+								<li><a href="#">Контакты</a></li>
+							</div>
+						</ul>
+					</li>
+					<li><a href="#">Прайс-лист</a></li>
+					<li><a href="#">Услуги online</a></li>
+					<li><a href="#">Регионы</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+				</div>	
+			</div>						
+	</div>
+	<div class="head">
+		<div class="header__search">
+					<div class="search">
+						<form>
+							<div class="icon-map">
+								<select>
+									<option>Росиия, Москва</option>
+									<option>Промышленность</option>
+									<option>Стройматериалы</option>
+									<option>Вода, газ, тепло</option>
+									<option>Дом и сад</option>
+									<option>Одежда и обувь</option>
+									<option>Спорт и отдых</option>
+									<option>Здоровье и красота</option>
+									<option>Текстиль и кожа</option>
+									<option>Промышленность</option>
+									<option>Стройматериалы</option>
+									<option>Вода, газ, тепло</option>
+									<option>Дом и сад</option>
+									<option>Одежда и обувь</option>
+									<option>Спорт и отдых</option>
+									<option>Здоровье и красота</option>
+									<option>Текстиль и кожа</option>
+								</select>
+							</div>
+
+							<div class="icon-cat">
+								<select>
+									<option>Все разделы</option>
+									<option>Промышленность</option>
+									<option>Стройматериалы</option>
+									<option>Вода, газ, тепло</option>
+									<option>Дом и сад</option>
+									<option>Одежда и обувь</option>
+									<option>Спорт и отдых</option>
+									<option>Здоровье и красота</option>
+									<option>Текстиль и кожа</option>
+									<option>Промышленность</option>
+									<option>Стройматериалы</option>
+									<option>Вода, газ, тепло</option>
+									<option>Дом и сад</option>
+									<option>Одежда и обувь</option>
+									<option>Спорт и отдых</option>
+									<option>Здоровье и красота</option>
+									<option>Текстиль и кожа</option>
+								</select>
+							</div>
+
+							<div class="search-wrap">
+								<input type="text" class="search-field"
+									placeholder="Поиск в каталоге. Например - Роботы-полесосы" />
+								<div class="search-result">
+									<div class="res-row">Моторные масла <span>5345 товаров </span></div>
+									<div class="res-row">Косметика по уходу за волосами<span>345 товаров </span></div>
+									<div class="res-row">Лаки, пропитки, антисептики<span>245 товаров </span></div>
+									<div class="res-row">Моторные масла <span>5345 товаров </span></div>
+									<div class="res-row">Косметика по уходу за волосами<span>345 товаров </span></div>
+									<div class="res-row">Лаки, пропитки, антисептики<span>245 товаров </span></div>
+									<div class="res-row-top">
+										<div class="img-wrap"><img src="img/buket4.jpg"></div>
+										<div class="search-descript">Nike Air Huracate<span>Куртка утепленаня</span></div>
+										<div class="stars">
+											<div class="full-star icon"></div>
+											<div class="full-star icon"></div>
+											<div class="full-star icon"></div>
+											<div class="star icon"></div>61 отзыв
+										</div>
+									</div>
+									<div class="res-row-top">
+										<div class="img-wrap"><img src="img/buket4.jpg"></div>
+										<div class="search-descript">Nike Air Huracate<span>Куртка утепленаня</span></div>
+										<div class="stars">
+											<div class="full-star icon"></div>
+											<div class="full-star icon"></div>
+											<div class="full-star icon"></div>
+											<div class="star icon"></div>61 отзыв
+										</div>
+									</div>
+								</div>
+							</div>
+							<button type="submit">Искать</button>
+						</form>
+					</div>
+				</div>
+		<div class="head-banner  carousel-notWork">	
+			<a href="javascript:;" class="lawer">АДВОКАТЫ</a>
+			<div class="carousel-item banner">
+				<h1>РЕАЛЬНАЯ ПОМОЩЬ<br/> <span>организациям и гражданам</span> 
+					<a href="/specialist/list/" class="btn catalog">Каталог специалистов</a>
+				<img class="decor" src="images/decor.png" alt=""></h1>
+				
+				<ul>
+					
+					<li><a href="#"><img src="images/ban-icon-1.png" />Юридическая консультация</a></li>
+					<li><a href="#"><img src="images/ban-icon-2.png" />Юрист 24/7</a></li>
+					<li><a href="#"><img src="images/ban-icon-3.png" />Семейные споры</a></li>
+					<li><a href="#"><img src="images/ban-icon-4.png" />Трудовые споры</a></li>
+					<li><a href="#"><img src="images/ban-icon-5.png" />Юридическая консультация</a></li>
+			
+				</ul>
+			</div>
+			
+		</div>
+	</div>	
+</header>
+
+
+<!--PARTNERS -->
+
+<div class="services">
+	<div class="wrapper">
+		<h6>Абоненсткое юридическое обслуживание</h6>
+		<div class="carousel-list carousel">	
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<a href="#" class="favorit-btn">
+						<img src="images/heart (1).svg" alt="">
+</a>
+<div class="nik-videoblock">
+<div class="reviews">
+	<div class="wrapper">
+		<h4>ВИДЕО КОНСУЛЬТАЦИИ СПЕЦИАЛИСТОВ</span></h4>
+		<div class="navigate">
+				<a href="Previo" class="moveNextCarouselV prew arr content-indicator"></a>
+				<a href="Siguiente" class="moveNextCarouselV next arr content-indicator"></a>
+		</div>
+		<div class=" carousel-video carousel">	
+			
+	<div class="carousel-item">
+
+	<h5 class="videoblock-title">Название сюжета</h5>
+	<h7 class="videoblock__autor">Автор</h7>
+				<div class="videoblock">
+		<video width="520" height="290" controls="controls" poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn07IAQv6Ffhu05BFQst6QAqvo4Da6cZddcyHwo52l&s">
+		   <source src="https://pervaya-yuridicheskaya-gruppa.ru/file_storage/pervaya-yuridicheskaya-gruppa.ru/20191230/103.mp4" type="video/mp4">
+		</video>
+	</div>
+			</div>
+			<div class="carousel-item">
+
+	<h5 class="videoblock-title">Название сюжета</h5>
+	<h7 class="videoblock__autor">Автор</h7>
+				<div class="videoblock">
+		<video width="520" height="290" controls="controls" poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn07IAQv6Ffhu05BFQst6QAqvo4Da6cZddcyHwo52l&s">
+		   <source src="https://pervaya-yuridicheskaya-gruppa.ru/file_storage/pervaya-yuridicheskaya-gruppa.ru/20191230/103.mp4" type="video/mp4">
+		</video>
+	</div>
+			</div>
+			<div class="carousel-item">
+
+	<h5 class="videoblock-title">Название сюжета</h5>
+	<h7 class="videoblock__autor">Автор</h7>
+				<div class="videoblock">
+		<video width="520" height="290" controls="controls" poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn07IAQv6Ffhu05BFQst6QAqvo4Da6cZddcyHwo52l&s">
+		   <source src="https://pervaya-yuridicheskaya-gruppa.ru/file_storage/pervaya-yuridicheskaya-gruppa.ru/20191230/103.mp4" type="video/mp4">
+		</video>
+	</div>
+			</div>
+			<div class="carousel-item">
+
+	<h5 class="videoblock-title">Название сюжета</h5>
+	<h7 class="videoblock__autor">Автор</h7>
+				<div class="videoblock">
+		<video width="520" height="290" controls="controls" poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn07IAQv6Ffhu05BFQst6QAqvo4Da6cZddcyHwo52l&s">
+		   <source src="https://pervaya-yuridicheskaya-gruppa.ru/file_storage/pervaya-yuridicheskaya-gruppa.ru/20191230/103.mp4" type="video/mp4">
+		</video>
+	</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+
+<!--
+
+<div class="carousel-item">
+				<div class="videoblock">
+		<video width="520" height="290" controls="controls" poster="/images/video/240bg-video-2.jpg">
+		   <source src="https://pervaya-yuridicheskaya-gruppa.ru/file_storage/pervaya-yuridicheskaya-gruppa.ru/20191230/103.mp4" type="video/mp4">
+		</video>
+	</div>
+			</div>
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+<!-- ABOUT US -->  
+<div class="about-us">
+	<div class="wrapper">	
+		<div class="col left-side">
+			<div class="col-row">
+				<div class="titile">ОПТИМИЗАЦИЯ НАЛОГОВ</div>
+				<div class="descrip">В 2017 году мы сэкономили нашим клиентам более 5 567 999 рублей при оптимизации налогооблажение</div>
+				<div class="icon cp-icon-1"></div>
+			</div>
+			<div class="col-row">
+				<div class="titile">УДОБНЫЙ СЕРВИС</div>
+				<div class="descrip">Вам никуда не нужно приезжать, наш специалист сам приедет к Вам в удобное время и место с конкретным предложением</div>
+				<div class="icon cp-icon-2"></div>
+			</div>
+			<div class="col-row">
+				<div class="titile">ЗАЩИТА ПРИ ПРОВЕРКАХ</div>
+				<div class="descrip">Защитили более 315 юридических лиц и ИП при проверках контролирующими органами</div>
+				<div class="icon cp-icon-3"></div>
+			</div>
+		</div>
+		<div class="col center-side">
+			<h3>Преимущества нашего сопровождения</h3>
+		</div>
+		<div class="col right-side">
+			<div class="col-row">
+				<div class="titile">ВЫИГРЫШ ДЕЛ В 93%</div>
+				<div class="descrip">Выиграли 93% судебных дел по привлечению бизнеса и ИП к административной и уголовной ответсвенности</div>
+				<div class="icon cp-icon-4"></div>
+			</div>
+			<div class="col-row">
+				<div class="titile">ОПЫТНЫЕ ЮРИСТЫ</div>
+				<div class="descrip">К нам обращаються компании у которых есть свои юридические департаменты, не способные решить сложные вопросы</div>
+				<div class="icon cp-icon-5"></div>
+			</div>
+			<div class="col-row">
+				<div class="titile">ВЫГОДНЫЕ УСЛОВИЯ</div>
+				<div class="descrip">Стоимость обслуживания от 25000р/мес, что сопастовимо с разовым обращением в юредические компании</div>
+				<div class="icon cp-icon-6"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bg1">
+<!-- reviews  -->
+<div class="reviews">
+	<div class="wrapper">
+		<h4>С вами будут работать</span></h4>
+		<div class="navigate">
+				<a href="Previo" class="movePrevCarousel prew arr content-indicator"></a>
+				<a href="Siguiente" class="moveNextCarousel next arr content-indicator"></a>
+		</div>
+		<div class="carousel-part carousel">	
+			
+			<div class="carousel-item">
+				<img src="img/men.png" />
+				<div class="descript">
+					<p>Иван Иванович</p>
+					<span>Старший юрист </span>
+					<div class="regalii">
+						<div class="row"><strong>Закончил:</strong> <p>Юредический ВУЗ</p> </div>
+						<div class="row"><strong> Награды:</strong>  <p>Премия с работы</p> </div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="img/men.png" />
+				<div class="descript">
+					<p>Иван Иванович</p>
+					<span>Старший юрист </span>
+					<div class="regalii">	<div class="row"><strong>Закончил:</strong> <p>Юредический ВУЗ</p> </div>
+						<div class="row"><strong> Награды:</strong>  <p>Премия с работы</p> </div></div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="img/men.png" />
+				<div class="descript">
+					<p>Иван Иванович</p>
+					<span>Старший юрист </span>
+					<div class="regalii">	<div class="row"><strong>Закончил:</strong> <p>Юредический ВУЗ</p> </div>
+						<div class="row"><strong> Награды:</strong>  <p>Премия с работы</p> </div></div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="img/men.png" />
+				<div class="descript">
+					<p>Иван Иванович</p>
+					<span>Старший юрист </span>
+					<div class="regalii">	<div class="row"><strong>Закончил:</strong> <p>Юредический ВУЗ</p> </div>
+						<div class="row"><strong> Награды:</strong>  <p>Премия с работы</p> </div></div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="img/men.png" />
+				<div class="descript">
+					<p>Иван Иванович</p>
+					<span>Старший юрист </span>
+					<div class="regalii">	<div class="row"><strong>Закончил:</strong> <p>Юредический ВУЗ</p> </div>
+						<div class="row"><strong> Награды:</strong>  <p>Премия с работы</p> </div></div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="img/men.png" />
+				<div class="descript">
+					<p>Иван Иванович</p>
+					<span>Старший юрист </span>
+					<div class="regalii">	<div class="row"><strong>Закончил:</strong> <p>Юредический ВУЗ</p> </div>
+						<div class="row"><strong> Награды:</strong>  <p>Премия с работы</p> </div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+
+<!-- reviews  -->
+<div class="sertificate">
+	<div class="wrapper">
+		<h4>Наши благодарности и рекомендации</span></h4>
+		<div class="carousel-serv carousel">	
+			<div class="navigate">
+					<div class="prew arr"></div>
+					<div class="next arr"></div>
+			</div>
+			<div class="carousel-item materialboxed">
+				<img   src="img/sertificate.jpg" />
+			</div>
+			<div class="carousel-item materialboxed">
+				<img  src="img/sertificate.jpg" />
+			</div>
+			<div class="carousel-item materialboxed">
+				<img   src="img/sertificate.jpg" />
+			</div>
+			<div class="carousel-item materialboxed">
+				<img  src="img/sertificate.jpg" />
+			</div>
+			<div class="carousel-item materialboxed">
+				<img  src="img/sertificate.jpg" />
+			</div>
+			<div class="carousel-item">
+				<img src="img/sertificate.jpg" />
+			</div>	
+			<div class="carousel-item materialboxed">
+				<img  src="img/sertificate.jpg" />
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="bg2">
+
+<!-- NUMBERS -->
+<div class="our-numbers">
+	<div class="wrapper">
+		<div class="flex-row">
+			<div class="flex-col-4"><div class="num"><div class="counter">9</div></div><span>Лет работы</span></div>
+			<div class="flex-col-4"><div class="num"><div class="counter">1950</div></div><span>Клиентов</span></div>
+			<div class="flex-col-4"><div class="num"><div class="counter">3250</div></div><span>Успешных дел</span></div>
+			<div class="flex-col-4"><div class="num"><div class="counter">8400</div></div><span>Консультаций</span></div>
+		</div>
+	</div>
+</div>
+
+<!-- PRICE -->
+<div class="price">
+	<div class="wrapper">
+		<h4>ЦЕНЫ<span>на абонентское и юридическое обслуживание</span></h4>
+		<div class="price-table">
+			<div class="statup plan">
+				<div class="icon"></div>
+				<div class="name">СТАРТАП</div>
+				<div class="descript">Рекомендуются малому и среднему бизнесу с кол-во сотрудников до 10</div>
+				<ul>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+				</ul>
+				<a href="#sakaz-price" data-targe="statup" class="modal">ЗАКАЗАТЬ</a>
+				<div class="all-price">от 29.900 р. в мес</div>
+				
+				<div class="fg-price">от 29.900 р.	<strong> клубная цена</strong> </div>
+				<div class="skidka">
+					<p>скидки от</p>
+					<div class="mega">15<span>%</span></div>
+					<span>для нескольких компаний</span>
+				</div>
+			</div>
+			<div class="standart plan">
+				<div class="icon"></div>
+				<div class="name">СТАНДАРТ</div>
+				<div class="descript">Рекомендуются малому и среднему бизнесу с кол-во сотрудников до 10</div>
+				<ul>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+				</ul>
+				<a href="#sakaz-price" data-targe="statup" class="modal">ЗАКАЗАТЬ</a>
+				<div class="all-price">от 29.900 р. в мес</div>				
+				<div class="fg-price">от 29.900 р.	<strong> клубная цена</strong> </div>
+			</div>
+			<div class="premium plan">
+				<div class="icon"></div>
+				<div class="name">ПРЕМИУМ</div>
+				<div class="descript">Рекомендуются малому и среднему бизнесу с кол-во сотрудников до 10</div>
+				<ul>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+					<li>- Юридические консультации</li>
+				</ul>
+				<a href="#sakaz-price" data-targe="statup" class="modal">ЗАКАЗАТЬ</a>
+				<div class="all-price">от 29.900 р. в мес</div>				
+				<div class="fg-price">от 29.900 р.	<strong> клубная цена</strong> </div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+<!-- STEPS  -->
+<div class="steps">
+	<div class="wrapper">
+		<h2>Схема работы</h2>
+		<div class="step-to-step">
+			<div class="step s1">
+				<div class="num">1</div>
+				<h4>ЗАЯВКА В НАШУ <br/>  КОМПАНИЮ</h2>
+				<p>Вы оставляете заявку на бесплатный анализ бизнеса либо</p>
+			</div>
+			<div class="step s2">
+				<div class="num">2</div>
+				<h4>ПОДГОТОВКА И <br/> СБОР ИНФОРМАЦИИ</h2>
+				<p>Вы оставляете заявку на бесплатный анализ бизнеса либо</p>
+			</div>
+			<div class="step s3">
+				<div class="num">3</div>
+				<h4>БЕСПЛАТНЫЙ <br/>  ПРАВОВОЙ АНАЛИЗ</h2>
+				<p>Вы оставляете заявку на бесплатный анализ бизнеса либо</p>
+			</div>
+			<div class="step s4">
+				<div class="num">4</div>
+				<h4>ЛИЧНОЕ <br/> ОБСУЖДЕНИЕ УСЛОВИЙ</h2>
+				<p>Вы оставляете заявку на бесплатный анализ бизнеса либо</p>
+			</div>
+			<div class="step s7">
+				<div class="num">7</div>
+				<h4>ПРОЦЕСС РАБОТЫ <br/> НАШИХ ЮРИСТОВ</h2>
+				<p>Вы оставляете заявку на бесплатный анализ бизнеса либо</p>
+			</div>
+			<div class="step s6">
+				<div class="num">6</div>
+				<h4>ВЫРАБОТКА<br/>  СИСТЕМЫ РАБОТЫ</h2>
+				<p>Вы оставляете заявку на бесплатный анализ бизнеса либо</p>
+			</div>
+			<div class="step s5">
+				<div class="num">5</div>
+				<h4>ЗАКЛЮЧЕНИЕ <br/> ДОГОВОРА</h2>
+				<p>Вы оставляете заявку на бесплатный анализ бизнеса либо</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- REWIEVS  -->
+<div class="news">
+	<div class="wrapper">
+		<h6>Полезные статьи от наших юристов</h6>
+		<div class="carousel carousel-rev">
+			<div class="carousel-item product">
+				<div class="icon-site"><a href="#" ><img src="img/news.png" /></a></div>
+				<div class="blogpost">
+					<a href="#">Правонарушения и их нака...</a>
+					<p>Все мы живем в цивилизованном обществе, имея определенные права и обязанности. Однако все наши действия в рамках жизни в обществе определяются Государственными законами. Именно Государственные законы и кодексы определяют, было ли то или иное действие общественно полезным или противоправным.</p>
+				</div>
+			</div>
+			<div class="carousel-item product">
+				<div class="icon-site"><a href="#" ><img src="img/news.png" /></a></div>
+				<div class="blogpost">
+					<a href="#">Правонарушения и их нака...</a>
+					<p>Все мы живем в цивилизованном обществе, имея определенные права и обязанности. Однако все наши действия в рамках жизни в обществе определяются Государственными законами. Именно Государственные законы и кодексы определяют, было ли то или иное действие общественно полезным или противоправным.</p>
+				</div>
+			</div>
+			<div class="carousel-item product">
+				<div class="icon-site"><a href="#" ><img src="img/news.png" /></a></div>
+				<div class="blogpost">
+					<a href="#">Правонарушения и их нака...</a>
+					<p>Все мы живем в цивилизованном обществе, имея определенные права и обязанности. Однако все наши действия в рамках жизни в обществе определяются Государственными законами. Именно Государственные законы и кодексы определяют, было ли то или иное действие общественно полезным или противоправным.</p>
+				</div>
+			</div>
+			<div class="carousel-item product">
+				<div class="icon-site"><a href="#" ><img src="img/news.png" /></a></div>
+				<div class="blogpost">
+					<a href="#">Правонарушения и их нака...</a>
+					<p>Все мы живем в цивилизованном обществе, имея определенные права и обязанности. Однако все наши действия в рамках жизни в обществе определяются Государственными законами. Именно Государственные законы и кодексы определяют, было ли то или иное действие общественно полезным или противоправным.</p>
+				</div>
+			</div>
+			<div class="carousel-item product">
+				<div class="icon-site"><a href="#" ><img src="img/news.png" /></a></div>
+				<div class="blogpost">
+					<a href="#">Правонарушения и их нака...</a>
+					<p>Все мы живем в цивилизованном обществе, имея определенные права и обязанности. Однако все наши действия в рамках жизни в обществе определяются Государственными законами. Именно Государственные законы и кодексы определяют, было ли то или иное действие общественно полезным или противоправным.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<!--PARTNERS -->
+
+<div class="partners">
+	<div class="wrapper">
+		<h6>Решение всех видов юридических проблем</h6>
+		<div class="carousel-list carousel">	
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+			<div class="carousel-item">
+				<ul>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+					<li>Юридическая консультация</li>
+					<li>Юрист 24/7</li>
+					<li>Семейные споры</li>
+					<li>Трудовые споры</li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<!-- CONTAKT  -->
+<div class="contakt">
+<div class="flex-col-5">
+	<div class="map">
+		<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A699953bbec23dd8abcbaee53d9027f429dde0c8b3bb28c5228787b3ac61d2645&amp;source=constructor" width="1000" height="615" frameborder="0">
+		</iframe>
+	</div>
+</div>
+<div class="flex-col-6">
+	<div class="contakt-block">
+		<div class="contack-text">
+			<h6>КОНТАКТЫ</h6>
+			<div class="flex-row"><div class="ico map"></div><strong>Адрес:</strong><p>м. Цветной бульвар, г. москва </p></div>
+			<div class="flex-row"><div class="ico mail"></div><strong>Email:</strong><p>jurist@mail.ru</p></div>
+			<div class="flex-row"><div class="ico phones"></div><strong>Телефон:</strong><p>8(988) 500-15-73</p><br/>
+				<div class="social">
+					<a href="#" class="tel"></a>
+					<a href="#" class="viber"></a>
+					<a href="#" class="wtf"></a>
+					<p>8(988) 500-15-73</p>
+				</div>
+				
+			</div>
+			<div class="faqu">
+				<p>Часто задаваемые вопросы</p>
+				<ul>
+					<li>Для чего нужен ваш сервис?</li>
+					<li>Стоимость наших услуг?</li>
+					<li>Что если нет в вашем списке 
+					нужного мне города?</li>
+					<li>Для чего нужен ваш сервис?</li>
+				</ul>
+			</div>
+		</div>
+		<div class="contakt-form">
+			<form>
+				<p>Форма быстрого запроса юридических услуг</p>
+				<span>Конфиденциальность гарантируем, заявки обрабатываються 1 час</span>
+				<form>
+					<input type="text" placeholder="ФИО"/>
+					<input type="text" placeholder="Телефон"/>
+					<input type="text" placeholder="Email"/>
+					<textarea>Суть задачи</textarea>
+					<input type="submit" value="Написать нам" />
+				</form>
+			</form>
+		</div>
+	</div>	
+</div>		
+</div>
+
+</div>
+
+<!-- FOTTER  -->
+
+<footer>
+	<div class="wrapper">
+		<div class="copy"><span>@ Все права защищены.<br/>2018 Файберам-маркет.</span></div>
+		<div class="phone">			
+			<div class="social">
+				<a href="#" class="tel"></a>
+				<a href="#" class="viber"></a>
+				<a href="#" class="wtf"></a>
+			</div>
+			<a href="#call" class="white icon-phone modal-trigger">8(800) 500-91-08</a>
+		</div>
+		<div class="bottom_menu">
+			<ul class="footer_menu">
+				<li><a href="#">Офферта</a></li>
+				<li><a href="#">Регистрация</a></li>
+				<li><a href="#">Карта сайта</a></li>
+				<li><a href="#">Политика конфидициальности</a></li>
+				<li><a href="#">Написать руководителю</a></li>
+			</ul>
+		</div>
+		<div class="social">
+			<a href="" class="vk"  target="_blank"></a>
+			<a href="" class="fb"  target="_blank"></a>
+			<a href="" class="you" target="_blank"></a>
+			<a href="" class="ins" target="_blank"></a>
+		</div>
+	</div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> 
+  <script src="js/jquery.counterup.min.js"></script> 
+    <script >
+	 $(document).ready(function(){  
+		$('.counter').counterUp({
+            delay: 5,
+            time: 2000
+		});
+	 });
+  </script>
+</body>
+</html>

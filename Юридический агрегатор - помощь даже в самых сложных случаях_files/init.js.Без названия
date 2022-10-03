@@ -1,0 +1,622 @@
+var widget_ids = {};
+
+$('.minus').click(function () {
+				var $input = $(this).parent().find('input');
+				var count = parseInt($input.val()) - 1;
+				count = count < 1 ? 1 : count;
+				$input.val(count);
+				$input.change();
+				return false;
+			});
+$('.plus').click(function () {
+				var $input = $(this).parent().find('input');
+				$input.val(parseInt($input.val()) + 1);
+				$input.change();
+				return false;
+			});
+
+function check_s2_uslugi() {
+    iC = 0;
+	$('.filled-in').each(function( index ) {
+   	 if ($( this ).prop("checked") == true) {
+   		 iC++;
+   		 if (iC>=4) {
+   			$( this ).click();
+   		 }
+   	 }
+    });
+	//alert(iC);
+	//if (iC>=4) {
+	//	sHTML = '<div class="error">Можно выбрать только 3 услуги на этом шаге. Выбрано: '+iC+'</div>';
+	//	$('#SpecStep2').append(sHTML);
+	//	setTimeout(() => $('.error').fadeOut(2000), 3000);
+	//}
+}
+
+function addProductToFavorite(product_id) {
+	fav = product_id;
+	$.post( "/classes/ajax/Favourites.php", { favourite: fav },onAjaxSuccess);
+	function onAjaxSuccess(data){
+		$(".aptf"+fav).hide();
+		$(".aptfg"+fav).show();
+		$('#favcount').html(data);
+	}
+} // end function addProductToFavorite
+
+function deleteProductToFavorite(fav) {
+    $.post( "/classes/ajax/Favourites.php", { delete: fav },onAjaxSuccess);
+	function onAjaxSuccess(data){
+		$(".aptf"+fav).show();
+		$(".aptfg"+fav).hide();
+		$('#favcount').html(data);
+	}
+} // end function addProductToFavorite_proceed
+
+			
+function ChangeUrl(page, url) {
+    if (typeof (history.pushState) != "undefined") {
+        var obj = {Page: page, Url: url};
+        history.pushState(obj, obj.Page, obj.Url);
+    } else {
+        document.location.href = "/price";
+        // alert("Browser does not support HTML5.");
+    }
+}
+
+var onloadCallback = function () {
+    var recaptchas = document.querySelectorAll('div[class=recaptcha_invisible]');
+    for (i = 0; i < recaptchas.length; i++) {
+      ind = i;
+      widget_ids[ind] = grecaptcha.render(recaptchas[i].id, {
+        'sitekey': '6LcpWbcUAAAAABxcFuPwsIhK3A5kG0-FRW1RqSd1',
+        'size': 'invisible'
+      });
+      console.log('rendered'+widget_ids[ind]);
+    }
+}
+function number_format(number,decimals,dec_point,thousands_sep) {
+    number  = number*1;//makes sure `number` is numeric value
+    var str = number.toFixed(decimals?decimals:0).toString().split('.');
+    var parts = [];
+    for ( var i=str[0].length; i>0; i-=3 ) {
+        parts.unshift(str[0].substring(Math.max(0,i-3),i));
+    }
+    str[0] = parts.join(thousands_sep?thousands_sep:',');
+    return str.join(dec_point?dec_point:'.');
+}
+
+function abonement_recalculate(idP) {
+	q = $('#aq_'+idP).val();
+	$.ajax({
+		   type: "POST",
+		   url: "/classes/ajax/getAbonement.php",
+		   data: {  
+				'id': idP,
+				'q': q
+				},
+		   dataType: "json",
+		   timeout: 15000,
+		   success: function(data){
+			   $('#ap_'+idP).html(data.ap);
+			   $('#as_'+idP).html(data.as);
+			   $('#ad_'+idP).show();
+			   if (data.had>0) {
+				   $('#aper_'+idP).html('-'+data.had+'%');
+				   $('#aper_'+idP).show();
+			   } else {
+				   $('#aper_'+idP).hide();
+			   }
+		   },
+		   error: function(XMLHttpRequest, textStatus, errorThrown){
+			   //alert('произошла ошибка загрузка формы. пожалуйста попробуйте снова');
+	       }
+	});
+}
+function send_sms(layer) {
+	phone = $('#'+layer).val();
+	$('#'+layer+'div').show();
+	$('#'+layer+'msg').html('идет запрос кода.....');
+	$.ajax({
+		   type: "POST",
+		   url: "/classes/FGLine.php",
+		   data: {  
+				'sendsmsreg': phone
+				},
+		   dataType: "json",
+		   timeout: 15000,
+		   success: function(data){
+				if (data.message!='') {
+					$('#'+layer+'msg').html(data.message);
+				}	
+		   },
+		   error: function(XMLHttpRequest, textStatus, errorThrown){
+			   //alert('произошла ошибка загрузка формы. пожалуйста попробуйте снова');
+	       }
+	});
+}
+var ltl = 0;
+function open_login() {
+	$('#enter').modal('open');
+}
+
+function loadPage(page,url,layer) {
+	$("#"+layer).load(url+'&page='+page, function() {
+		$('select').formSelect();
+    });
+}
+
+function makeConsultOrder() {
+	//alert('hi');
+	//$('#consult').modal('close');
+	fast_lastname = $('#fast_lastname').val();
+	fast_firstname = $('#fast_firstname').val();
+	fast_middlename = $('#fast_middlename').val();
+	fast_phone = $('#fast_phone').val();
+	fast_email = $('#fast_email').val();
+	fast_region = $('#fast_region').val();
+	fast_city = $('#fast_city').val();
+	fast_description = $('#fast_description').val();
+	fast_spec = $('#fast_spec').val();
+	$('#fast_button').hide();
+
+	if (fast_lastname!='' && fast_firstname!='' && fast_middlename!='' && fast_phone!='' && fast_email!='' && fast_region!='' && fast_city!='' && fast_description!='' && fast_spec>0) {
+		
+		$.ajax({
+			   type: "POST",
+			   url: "/classes/FGLine.php",
+			   data: {  
+					'action': 'fast_consult',
+					'fast_lastname': fast_lastname,
+					'fast_firstname': fast_firstname,
+					'fast_middlename': fast_middlename,
+					'fast_phone': fast_phone,
+					'fast_email': fast_email,
+					'fast_region': fast_region,
+					'fast_city': fast_city,
+					'fast_description': fast_description,
+					'fast_spec':fast_spec
+					},
+			   dataType: "json",
+			   timeout: 20000,
+			   success: function(data){
+					if (data.success=='OK') {
+						revealMainError(data.message);
+						$('#fast_lastname').val('');
+						$('#fast_firstname').val('');
+						$('#fast_middlename').val('');
+						$('#fast_phone').val('');
+						$('#fast_email').val('');
+						$('#fast_region').val('');
+						$('#fast_city').val('');
+						$('#fast_description').val('');
+						$('#consult').modal('close');
+					} else {
+						revealMainError(data.message);
+					}
+					$('#fast_button').show();
+			   },
+			   error: function(XMLHttpRequest, textStatus, errorThrown){
+				   revealMainError('произошла ошибка загрузки формы. пожалуйста попробуйте позже.');
+				   $('#fast_button').show();
+		       }
+		});
+		
+	} else {
+		revealMainError('пожалуйста заполните все поля');
+		$('#fast_button').show();
+	}
+}
+
+function revealMainError(sText) {
+	$('#main_error').html(sText);
+	$('#main_error').show();
+	setTimeout(() => $('#main_error').fadeOut(2000), 4000);
+}
+
+function modal_consult_open() {
+	$(".phone").mask("+7 (999) 999-9999");
+	$('#consult').modal('open');
+}
+
+function GetSpecialistList(group_id) {
+	
+	if (group_id==0) {
+		for (i=1;i<10;i++) {
+			layer = 'az'+i;
+			if ($('#'+layer).length) {
+				if ($('#'+layer).hasClass('active')) {
+					group_id=i;
+					//alert(group_id);
+					break;
+				}
+			}
+		}
+	}
+	
+	if (group_id>0) {
+		
+		sname = $('#sname').val();
+
+		layer = 'dz'+group_id;
+		sortby = $("#sortby"+group_id).val();
+		fb = $('#feedbacks').prop('checked');
+		if (fb==true) fb=1; else fb=0;
+		
+		loadPage(1,'/classes/ajax/getSpecialistList.php?group_id='+group_id+'&sortby='+sortby+'&fb='+fb+'&sname='+sname,'dz'+group_id);
+	}
+}
+
+function loadPhone(uid,layer) {
+	$("#"+layer).load('/classes/ajax/getSpecialistPhone.php?id='+uid);
+}
+function switchFavorite(uid) {
+	$.ajax({
+		   type: "POST",
+		   url: "/classes/ajax/Specialist.php",
+		   data: {  
+				'id': uid,
+				'action': 'switchFavoriteSpecialist'
+				},
+		   dataType: "json",
+		   timeout: 15000,
+		   success: function(data){
+			   if (data.current_status=='active') {
+				   $('#favid').addClass('active');
+			   } else {
+				   $('#favid').removeClass('active');
+			   }
+				//if (data.message!='') {
+				//	$('#favid').html(data.message);
+				//}	
+		   },
+		   error: function(XMLHttpRequest, textStatus, errorThrown){
+			   //alert('произошла ошибка загрузка формы. пожалуйста попробуйте снова');
+	       }
+	});
+}
+
+function open_region_old() {
+	console.log('clicked');
+	if (ltl==0) {
+		$('#ploader').hide();
+		$('#rloader').show();
+		console.log('load');
+		ltl=1;
+		$.ajax({ type: "GET",   
+		     url: "/classes/ajax/get_choose_region.php",   
+		     success : function(text)
+		     {
+		    	 
+		         $('#chooseregion').append(text);
+		         $( ".region ul" ).slideToggle(1); 
+		         $('#rloader').hide();
+		 		 $('#ploader').show();
+		     }
+		});
+	} else {
+		$('#ploader').hide();
+		$('#rloader').show();
+		$( ".region ul" ).slideToggle(1); 
+		 $('#rloader').hide();
+ 		 $('#ploader').show();
+	}
+}
+
+function SendOrderForm(v) {
+	//event.preventDefault();
+	//alert(v);
+	payment = $('#PaymentMethod input[name=payment]:checked').val();
+	delivery = $('#DeliveryMethod input[name=delivery]:checked').val();
+	$('#r_payment_'+v).val(payment);
+	$('#r_delivery_'+v).val(delivery);
+	//alert($('#r_payment_'+v).val());
+	//alert($('#r_delivery_'+v).val());
+	return true;
+}
+
+function testJump(x){
+    var ml = ~~x.getAttribute('maxlength');
+    if(ml && x.value.length >= ml){
+        do{
+            x = x.nextSibling;
+        }
+        while(x && !(/text/.test(x.type)));
+        if(x && /text/.test(x.type)){
+            x.focus();
+        }
+    }
+}
+
+
+
+  // Or with jQuery
+
+  
+
+$(document).ready(function(){
+    $('.tooltipped').tooltip();
+	$('.collapsible').collapsible();
+	$('.materialboxed').materialbox();
+	$('.modal').modal();
+	if ($('.tabs').length) {
+		$('.tabs').tabs({
+			swipeable:true 
+		});
+	}
+	if (typeof noSelectForm !== 'undefined') {
+		//alert('prevent');
+	} else {
+		$('select').formSelect();
+	}
+	$('.tabsauth').tabs();
+
+	$('.carousel.head-banner').carousel({
+		fullWidth: true
+	});
+    
+	 valc = $('#head-banners').val();
+	 if (valc>1) {
+		 setInterval(function() {
+			$('.carousel.head-banner').carousel('next');
+		 }, 10000);  
+	 }
+
+   
+	$( ".basket" ).hover(function(){
+	    $( ".dropdown" ).slideToggle(200); 
+	});
+	//$( ".region" ).click(function(){
+	//    $( ".region ul" ).slideToggle(200); 
+	// });
+
+	
+	$(".phone_masked").mask("+7 (999) 999-9999");
+		
+	if ($('#LoginForm').length) {	   
+		   $("#phone").mask("+7 (999) 999-9999");
+		   $('#passwordphone').mask('9999');
+
+		   $('#LoginForm').submit(function(event) {
+		        console.log('form submitted.');
+
+		        if (!grecaptcha.getResponse()) {
+		            console.log('captcha not yet completed.');
+
+		            event.preventDefault(); //prevent form submit
+		            grecaptcha.execute();
+		        } else {
+		            console.log('form really submitted.');
+		        }
+		    });
+
+		    onCompleted = function() {
+		        console.log('captcha completed.');
+		        $('#LoginForm').submit();
+		        console.log('form submited');
+		        //alert('wait to check for "captcha completed" in the console.');
+		    }
+	}
+	if ($('#PasswordForm').length>0) {
+		$("#rphone").mask("+7 (999) 999-9999");
+		$('#rpasswordphone').mask('9999');
+
+		   $('#PasswordForm').submit(function(event) {
+		        console.log('formR submitted.');
+
+		        if (!grecaptcha.getResponse()) {
+		            console.log('captchaR not yet completed.');
+
+		            event.preventDefault(); //prevent form submit
+		            grecaptcha.execute();
+		        } else {
+		            console.log('formR really submitted.');
+		        }
+		    });
+
+		    onCompletedR = function() {
+		        console.log('captchaR completed.');
+		        $('#PasswordForm').submit();
+		        console.log('formR submited');
+		        //alert('wait to check for "captcha completed" in the console.');
+		    }
+	}
+	
+
+	    //function log( message ) {
+	    //  $( "<div>" ).text( message ).prependTo( "#log" );
+	    //  $( "#log" ).scrollTop( 0 );
+	    //}
+	 //alert('splaceid');
+	 
+	var carousel3 = $(".carousel-serv");
+		carousel3.owlCarousel({
+			itemsDesktop:     4,
+			itemsDesktop:      [2650, 4],
+			itemsDesktopSmall: [1920, 4],
+			itemsMobile:       [420, 1],
+
+		});
+		
+		$('.sertificate .prew').click(function () {
+			carousel3.trigger('owl.prev');
+			return false;
+		});
+		$('.sertificate .next').click(function () {
+			carousel3.trigger('owl.next');
+			return false;
+		});
+		
+	var carousel2 = $(".s11");
+		carousel2.owlCarousel({
+			itemsDesktop:     3,
+			itemsDesktop:      [2650, 3],
+			itemsDesktopSmall: [1920, 3],
+			itemsMobile:       [420, 1]
+
+		});	
+	
+		$('.services .prew').click(function () {
+			carousel2.trigger('owl.prev');
+			return false;
+		});
+		$('.services .next').click(function () {
+			carousel2.trigger('owl.next');
+			return false;
+		});
+	
+	var carousel4 = $(".carousel-part");
+		carousel4.owlCarousel({
+			itemsDesktop:    4,
+			itemsDesktop:      [2650, 4],
+			itemsDesktopSmall: [1400, 4],
+			itemsMobile:       [420, 1],
+			autoPlay : false,
+			stopOnHover : false
+		});		
+	
+		$('.reviews .prew').click(function () {
+			carousel4.trigger('owl.prev');
+			return false;
+		});
+		$('.reviews .next').click(function () {
+			carousel4.trigger('owl.next');
+			return false;
+		});
+		
+	var carousel5 = $(".carousel-rev");
+		carousel5.owlCarousel({
+			itemsDesktop:     4,
+			itemsDesktop:      [2650, 4],
+			itemsDesktopSmall: [1400, 4],
+			itemsMobile:       [420, 1],
+			autoPlay : false,
+		});			
+		
+		$('.news .prew').click(function () {
+			carousel5.trigger('owl.prev');
+			return false;
+		});
+		$('.news .next').click(function () {
+			carousel5.trigger('owl.next');
+			return false;
+		});
+		
+	var carousel6 = $(".p11");
+		carousel6.owlCarousel({
+			itemsDesktop:     3,
+			itemsDesktop:      [2650, 3],
+			itemsDesktopSmall: [1920, 3],
+			itemsMobile:       [420, 1]
+
+		});	
+	
+		$('.partners .prew').click(function () {
+			carousel6.trigger('owl.prev');
+			return false;
+		});
+		$('.partners .next').click(function () {
+			carousel6.trigger('owl.next');
+			return false;
+		});	
+
+	
+		
+//module('Autoplay tests');
+
+function FakeClock() {
+	// Instantiate a new controllable clock which overrides the built in Date
+	// class on construction.
+	var value = 1;
+
+	this.tick = function(duration) {
+		value += duration;
+	};
+	// TODO: This is broken and has to be fixed in the near future
+	this.Date = function() {
+		this.getTime = function() {
+			return value;
+		}
+	}
+}
+
+function change_timeout(autoplay, first, second, wait) {
+	var clock = new FakeClock();
+
+	// This is a helper function to test multiple consecutive play calls with
+	// different timeout values. Four steps will be completed by this function:
+
+	// 1. The autoplay will be played in a stopped state with the first timeout.
+	autoplay.stop();
+	autoplay.play(first);
+
+	// 2. Time will be forwarded a given wait time.
+	clock.tick(wait);
+
+	// 3. The autoplay will be paused.
+	autoplay.pause();
+
+	// 4. The autoplay will be played with the second timeout.
+	autoplay.play(second);
+	
+	
+}
+
+	
+	
+	var options = {
+
+	  url: function(phrase) {
+	    return "/classes/ajax/search_autocomplete_region.php";
+	  },
+
+	  getValue: function(element) {
+		  //console.log(element);
+	    return element.name;
+	  },
+
+	  ajaxSettings: {
+	    dataType: "json",
+	    method: "POST",
+	    data: {
+	      dataType: "json"
+	    }
+	  },
+
+	  preparePostData: function(data) {
+	    data.phrase = $("#splaceid").val();
+	    return data;
+	  },
+
+	  requestDelay: 100,
+	  list: {
+
+		  onChooseEvent: function() {
+				//var index = $("#function-index").getSelectedItemIndex();
+				var value = $("#splaceid").getSelectedItemData();
+				console.log(value);
+				$("#splaceid").val(value.short_name);
+				$("#stype").val(value.type);
+				$("#seid").val(value.id);
+				//$("#index-holder").val(index).trigger("change");
+			}
+		}
+	  
+	};
+
+	$("#splaceid").easyAutocomplete(options);
+		console.log('hi');
+
+		    
+});
+
+
+	
+
+	
+
+
+
+ 
+
+        
+

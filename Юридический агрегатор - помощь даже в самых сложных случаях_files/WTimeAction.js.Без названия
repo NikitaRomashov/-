@@ -1,0 +1,111 @@
+/* Time Action */
+function DialogCenter(field){
+        var window_height = $(window).height(); // высота окна браузера
+        var dialog_height = field.parents('.ui-dialog').height(); // высота dialog
+        if(window_height*1 > dialog_height*1){
+            var top = (window_height*1 - dialog_height*1)/2;
+        }else{
+            var top = 0;
+        }
+        field.parents('.ui-dialog').css('top', top);
+    }
+
+ function displayPopup(){
+	 //alert('hi');
+	 
+	 $.ajax({
+		   type: "POST",
+		   url: "/components/widgets/WTimeAction/WTimeAction.php",
+		   data: {  
+				'type': 'view',
+				'ajax': 'true'
+				},
+		   dataType: "json",
+		   timeout: 15000,
+		   success: function(data){
+				//console.log(data);
+			    if (data.success=='ok') {
+			    	$('#z_price').html(data.price+' р');
+			    	$('#z_min').html(data.min+'<span>мин</span>');
+			    	$('#z_sec').html(data.sec+'<span>сек</span>');
+			    	$('#z_percent').html(data.percent+'%');
+			    	
+			    	$('#SendAC1').on('click', function(){
+	                    //var url = $('div#FormAC input#UrlAC').val();
+	                   // $(this).parents('#DialogTimeAction').prepend('<div class="ajax-loader"></div>');
+	                   // $(this).parents('#DialogTimeAction').load("/components/widgets/WTimeAction/WTimeAction.php",{type: 'send', apply: 1, url: url}, function(){
+	                        //$('.ajax-loader').remove();DialogCenter($(this));
+	                        //$(".ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable").animate({top:"0",left:"0",width:'150px',height:'40px',opacity:'0.2'}, 1200, function() {
+	                      //  document.location.reload(true);
+	                     // });
+	                        //$("#DialogTimeAction").hide("slow");
+	                        //document.location.reload(true);
+	                    //});
+			    		$.ajax({
+		             		   type: "POST",
+		             		   url: "/components/widgets/WTimeAction/WTimeAction.php",
+		             		   data: {  
+		             				'type': 'send',
+		             				'apply': 1
+		             				},
+		             		   timeout: 15000,
+		             		   success: function(data){
+		             			 // alert('hi');
+		             			  document.location.reload(true);
+		             		   },
+		             		   error: function(XMLHttpRequest, textStatus, errorThrown){
+		             			   //alert('произошла ошибка загрузка формы. пожалуйста попробуйте снова');
+		             	       }
+		                	});
+	                });
+	                
+	                //SendACNo
+	                $('#SendACNo1').on('click', function(){
+	                    //var url = $('div#FormAC input#UrlAC').val();
+	                    //$(this).parents('#DialogTimeAction').load("/components/widgets/WTimeAction/WTimeAction.php",{type: 'send', apply: 0, url: url}, function(){
+	                        //$('.ajax-loader').remove(); DialogCenter($(this));
+	                        //$(".ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable").hide("slow");
+	                        //$(".ui-widget-overlay").hide("fast");
+	                        //document.location.reload(true);
+	                        //$("#DialogTimeAction").hide("slow");
+	                    ///});
+	                	
+	                	$.ajax({
+	             		   type: "POST",
+	             		   url: "/components/widgets/WTimeAction/WTimeAction.php",
+	             		   data: {  
+	             				'type': 'send',
+	             				'apply': 0
+	             				},
+	             		   timeout: 15000,
+	             		   success: function(data){
+	             			   //alert('hi');
+	             			  $('#zakaz').modal('close');
+	             		   },
+	             		   error: function(XMLHttpRequest, textStatus, errorThrown){
+	             			   //alert('произошла ошибка загрузка формы. пожалуйста попробуйте снова');
+	             	       }
+	                	});
+	                }); 
+	                
+					$('#zakaz').modal('open');
+			    }
+		   },
+		   error: function(XMLHttpRequest, textStatus, errorThrown){
+			   //alert('произошла ошибка загрузка формы. пожалуйста попробуйте снова');
+	       }
+	});
+	 
+       
+}  
+
+$(document).ready(function(){
+    
+	setTimeout(function() {
+	    lastFocus = document.activeElement;
+	    displayPopup();
+	  }, 5000);//5 сек
+ 
+    // Вызов диалогового окна
+    
+});

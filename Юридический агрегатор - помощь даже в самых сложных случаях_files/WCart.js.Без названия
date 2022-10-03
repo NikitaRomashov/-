@@ -1,0 +1,99 @@
+
+function check_price(p=0,s=0) {
+	price_p = p;
+	price_s = s;	
+	special = 1;
+	
+	$('.filled-in').each(function () {
+		if (this.id=='special') {
+			if (this.checked) special = 0.5;
+		} else {
+	        if (this.checked) {
+	            price_p = price_p + parseInt($(this).attr('data-idp'));
+	            price_s = price_s + parseInt($(this).attr('data-ids'));
+	        }
+		}
+	});
+	$('#price_p').html(parseInt(price_p*special));
+	$('#price_s').html(parseInt(price_s*special));
+}
+
+$(document).ready(function(){
+    
+	 // Ajax добавление товара в корзину 
+    $('form.formVariants').submit(function(e){
+        e.preventDefault();
+        var field = $(this);
+        
+        amount = $(this).find('input[type="text"][name *= amount]').val();
+        if(isNaN(amount)){
+        	//alert('here');
+        	amount = $(this).find('select[name *= amount]').val();
+        	//alert(amount);
+        	if(isNaN(amount)){
+        		amount = $(this).find('input[type="number"][name *= amount]').val();
+            	//alert(amount);
+            	if(isNaN(amount)){
+            		amount = 1;
+            	}
+        	}
+        }
+        
+        var contentS = '';
+        var iC = 0;
+        var special = 0;
+        $('.filled-in').each(function( index ) {
+        	if (this.id=='special') {
+    			if (this.checked) special = 1;
+    		} else {
+        	 if ($( this ).prop("checked") == true) {
+        		 contentS = contentS + ',' + $( this ).val();
+        		 iC++;
+        	 }
+    		}
+        });
+        //variant = $('#variant').val();
+        variant = $(this).find('input[type="hidden"][name *= variant]').val();
+        //alert(variant);
+        
+        var cSpecial = 1;
+        if (special==1) cSpecial=0.5;
+        
+        $('#CartInfo').load("/classes/FGLine.php",{ajaxCart: 'ok', variant: variant, amounts: amount, contentS: contentS, special: special}, function(){
+            
+		            // Добавление из корзины
+		            //var get = new String(window.location);
+		            //var result = get.match('/cart/');
+		            //if(result){
+		            //    window.location.reload();
+		            //}
+        			
+        			if ($("#fadd_des").val()) {
+	 					$('#add_description').html($("#fadd_des").val());
+	 					$('#add_price').html(parseInt($("#fadd_price_p").val()*cSpecial)+'р');
+	 					$('#add_ul').html($("#fadd_ul").val());
+	 					$('#add').modal('open'); 
+        			} else {
+        				$('#main_error').html('добавить выбранную услугу в корзину не удалось');
+	 					$('#main_error').show();
+	 					 setTimeout(() => $('#main_error').fadeOut(2000), 3000);
+        			}
+		     			
+		            
+        
+		           //$('#CartInfoDialog').dialog({
+		           //     open: function(){
+		           //         $(this).prepend('<div class="ajax-loader"></div>');
+		           //     },
+		           //     width: 500, 
+		           //     height: 420, 
+		           //     modal: true,
+		           // }).load("/classes/FGLine.php",{ajaxCartDialog: "ok"},
+		           //     function(){
+		           //         $('.ajax-loader').remove();
+		           //     }
+		           // );
+        });
+        
+    });
+});

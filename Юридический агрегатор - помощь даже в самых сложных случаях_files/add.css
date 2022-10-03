@@ -1,0 +1,70 @@
+.timer{color:#fff;position: fixed; left:15px; top:15px; z-index:999;justify-content: center;box-sizing: border-box;padding: 10px;background:#2d7b47;margin-top:20px;margin-left:15px;border-radius: 0px;float: right;margin-right: 15px;box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+}
+.timer p{ display:block; text-align:center; text-transform: uppercase; margin-top:10px;color: #fff;}
+#TimeActionLast{
+font-weight: bold;
+    border: 1px solid #68952e;
+    font-size: 26px;
+    height: 49px;
+    background: #E8E8E8;
+    padding: 5px 12px;
+    background: -webkit-linear-gradient(top left, #E8E8E8, #B0B0B0);
+    background: -moz-linear-gradient(top left, #E8E8E8, #B0B0B0);
+    background: linear-gradient(top left, #E8E8E8, #B0B0B0);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.34);
+    color: #1b4e2c;
+    line-height: 36px;}
+	
+#FormAC div:not(.left){    display: flex;} 
+#FormAC button{   height: 50px;    white-space: nowrap;  display: flex;} .wTimeActionInfo #SendACNo{     height: 50px;   margin-left: -10px!important;}.wTimeActionInfo #SendAC{    margin-left: 5px;}#FormAC button span{}
+.wTimeActionInfo .right, .wTimeActionInfo .left{      margin-right: 0px!important;   width: 100%!important;  padding-left: 30px;}
+.acc_head{margin-top:15px; background:url(trigl.png) no-repeat left 5px; }
+.acc_body{ display:none;}
+.wTimeActionInfo .right{
+	margin-bottom: 40px;
+	justify-content: center;
+	display: flex;
+	box-sizing: border-box;
+	padding: 10px 15px 15px 15px;
+	background:rgba(255, 255, 255, 0.6); 
+	border:solid 6px #75ab40;
+	margin-top:20px;
+	margin-left:15px;
+	border-radius: 6px;
+	float: right;
+	margin-right: 15px;
+}
+.wTimeActionInfo  #SendAC{margin-bottom: 20px;margin-left:15px;background: #df161e; border:1px solid #df161e;border-radius:0px;box-shadow:inset -2px -2px 3px 1px rgba(0, 0, 0, 0.3), inset 2px 2px 3px 1px rgba(214, 214, 214, 0.3);padding: 10px 20px;}
+.wTimeActionInfo  #SendACNo{  border-radius:0px;box-shadow:inset -2px -2px 3px 1px rgba(0, 0, 0, 0.3), inset 2px 2px 3px 1px rgba(214, 214, 214, 0.3);padding: 10px 20px;}
+#DialogTimeAction{    min-height: 240px; background: url(flowers.png) no-repeat!important;background-size: cover!important;}
+#FormAC h3{font-size: 26px!important;}
+#FormAC p+h3{font-size: 36px!important; margin-top:0px;}
+	
+
+.favorit1:before {
+	color: #5659a7;
+}
+.favorit1 {
+	display: block;
+	color: #969494;
+	height: 40px;
+	max-width: 40px;
+}
+
+.favorit1:hover {
+	color: #ee2c7a;
+}
+
+.favorit1:before {
+	cursor: pointer;
+	display: block;
+	font-family: Flaticon;
+	padding-top: 5px;
+	font-size: 20px;
+	content: "\f101";
+}
+
+.favorit1.active:before {
+	content: "\f100";
+	color: #ff3843;
+}
